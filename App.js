@@ -1,13 +1,8 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 
 import useCachedResources from './hooks/useCachedResources';
-import BottomTabNavigator from './navigation/BottomTabNavigator';
-import LinkingConfiguration from './navigation/LinkingConfiguration';
-
-const Stack = createStackNavigator();
+import AppContainer from './screens';
 
 export default function App(props) {
   const isLoadingComplete = useCachedResources();
@@ -18,11 +13,7 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
-        <NavigationContainer linking={LinkingConfiguration}>
-          <Stack.Navigator>
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <AppContainer />
       </View>
     );
   }

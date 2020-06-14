@@ -1,5 +1,6 @@
 {
   "expo": {
+    "entryPoint": "node_modules/expo/AppEntry.js",
     "name": "english-pronunciation-app",
     "slug": "english-pronunciation-app",
     "platforms": [
@@ -17,16 +18,49 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.lnanhkhoa.pronunciationapp",
+      "backgroundColor": "#ffffff",
+      "buildNumber": "1.0.0",
+      "infoPlist": {},
+      "config": {}
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+    },
+    "android": {
+      "package": "com.lnanhkhoa.pronunciationapp",
+      "versionCode": 1,
+      "permissions": [
+        "NOTIFICATIONS",
+        "USER_FACING_NOTIFICATIONS"
+      ],
+      "config": {}
+    },
+    "description": "",
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "expo.ts",
+        "expo.tsx",
+        "expo.js",
+        "expo.jsx",
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "wasm",
+        "svg"
+      ]
     }
   }
 }
